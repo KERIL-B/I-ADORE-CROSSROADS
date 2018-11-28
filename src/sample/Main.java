@@ -48,7 +48,7 @@ public class Main extends Application {
 
     public static void refresh(List<Lane> lanes) {
         lanes.forEach(lane -> {
-            
+
         });
     }
 }
