@@ -5,24 +5,32 @@ import javafx.scene.image.ImageView;
 
 public class Images {
 
-    private static ImageView crossroad = new ImageView(new Image("crossroad.png"));
-    private static ImageView redLight = new ImageView(new Image("red_light.png"));
-    private static ImageView greenLight = new ImageView(new Image("green_light.png"));
-    private static ImageView vehicle = new ImageView(new Image("vehicle.png"));
+    private static ImageView CROSSROAD = new ImageView(new Image("resources/crossroad.png"));
+    private static ImageView RED_LIGHT = new ImageView(new Image("resources/red_light.png"));
+    private static ImageView GREEN_LIGHT = new ImageView(new Image("resources/green_light.png"));
+    private static ImageView VEHICLE = new ImageView(new Image("resources/vehicle.png"));
 
     public static ImageView getCrossroad() {
-        return crossroad;
+        return CROSSROAD;
     }
 
     public static ImageView getRedLight() {
-        return redLight;
+        return RED_LIGHT;
     }
 
     public static ImageView getGreenLight() {
-        return greenLight;
+        return GREEN_LIGHT;
     }
 
     public static ImageView getVehicle() {
-        return vehicle;
+        return VEHICLE;
+    }
+
+    public static double getBGWifth() {
+        return CROSSROAD.getImage().getWidth();
+    }
+
+    public static double getBGHeight() {
+        return CROSSROAD.getImage().getHeight();
     }
 }

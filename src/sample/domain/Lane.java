@@ -23,4 +23,11 @@ public class Lane {
     public boolean isGreen() {
         return green;
     }
+
+    public Lane(Long id, DirectionEnum direction, int vehiclesCount, boolean green) {
+        this.id = id;
+        this.direction = direction;
+        this.vehiclesCount = vehiclesCount;
+        this.green = green;
+    }
 }

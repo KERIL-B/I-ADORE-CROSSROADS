@@ -5,7 +5,6 @@ import javafx.scene.layout.Pane;
 import sample.domain.Lane;
 import sample.enums.DirectionEnum;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static sample.consts.Images.*;
@@ -27,15 +26,13 @@ public class DisplayService {
     }
 
     private void displayVehicles(Lane lane) {
-        List<ImageView> vehicles = new ArrayList<>();
         for (int i = 0; i < lane.getVehiclesCount(); i++) {
             ImageView vehicle = getVehicle();
             vehicle.setRotate(getRotationAngle(lane.getDirection()));
             vehicle.setTranslateX(getVehicleCoordinateX(lane, i));
-            vehicle.setTranslateX(getVehicleCoordinateY(lane, i));
-            vehicles.add(vehicle);
+            vehicle.setTranslateY(getVehicleCoordinateY(lane, i));
+            crossroad.getChildren().add(vehicle);
         }
-        crossroad.getChildren().addAll(vehicles);
     }
 
     private void displayLight(Lane lane) {

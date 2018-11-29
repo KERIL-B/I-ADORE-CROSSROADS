@@ -2,12 +2,7 @@ package sample.utils;
 
 import sample.domain.Lane;
 
-import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
-
-import static sample.consts.LightCoordinates.getxList;
-import static sample.consts.LightCoordinates.getyList;
+import static sample.consts.LaneCoordinates.*;
 import static sample.enums.DirectionEnum.*;
 
 public class CoordinatesUtils {
@@ -20,7 +15,7 @@ public class CoordinatesUtils {
             directionK = -1;
         else directionK = 0;
 
-        return xCoordinates.get(indexInQueue) + directionK * indexInQueue * getGap();
+        return getX(lane.getId()) + directionK * indexInQueue * getInterval();
     }
 
     public static double getVehicleCoordinateY(Lane lane, int indexInQueue) {
@@ -31,14 +26,14 @@ public class CoordinatesUtils {
             directionK = -1;
         else directionK = 0;
 
-        return yCoordinates.get(indexInQueue) + directionK * indexInQueue * getGap();
+        return getY(lane.getId()) + directionK * (indexInQueue * getInterval() + getBeforeLightInterval());
     }
 
     public static double getLightCoordinateX(Long laneId) {
-        return getxList().get(laneId.intValue());
+        return getX(laneId);
     }
 
     public static double getLightCoordinateY(Long laneId) {
-        return getyList().get(laneId.intValue());
+        return getY(laneId);
     }
 }
