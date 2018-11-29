@@ -8,6 +8,7 @@ public class Images {
     private static ImageView crossroad = new ImageView(new Image("crossroad.png"));
     private static ImageView redLight = new ImageView(new Image("red_light.png"));
     private static ImageView greenLight = new ImageView(new Image("green_light.png"));
+    private static ImageView vehicle = new ImageView(new Image("vehicle.png"));
 
     public static ImageView getCrossroad() {
         return crossroad;
@@ -19,5 +20,9 @@ public class Images {
 
     public static ImageView getGreenLight() {
         return greenLight;
+    }
+
+    public static ImageView getVehicle() {
+        return vehicle;
     }
 }
