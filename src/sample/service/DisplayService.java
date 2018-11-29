@@ -15,10 +15,12 @@ public class DisplayService {
 
     public DisplayService(Pane crossroad) {
         this.crossroad = crossroad;
-        crossroad.getChildren().add(getCrossroad());
+        initCossroad();
     }
 
     public void display(List<Lane> lanes) {
+        crossroad.getChildren().clear();
+        initCossroad();
         lanes.forEach(lane -> {
             displayVehicles(lane);
             displayLight(lane);
@@ -27,7 +29,7 @@ public class DisplayService {
 
     private void displayVehicles(Lane lane) {
         for (int i = 0; i < lane.getVehiclesCount(); i++) {
-            ImageView vehicle = getVehicle();
+            ImageView vehicle = new ImageView(getVehicle());
             vehicle.setRotate(getRotationAngle(lane.getDirection()));
             vehicle.setTranslateX(getVehicleCoordinateX(lane, i));
             vehicle.setTranslateY(getVehicleCoordinateY(lane, i));
@@ -36,7 +38,7 @@ public class DisplayService {
     }
 
     private void displayLight(Lane lane) {
-        ImageView img = lane.isGreen() ? getGreenLight() : getRedLight();
+        ImageView img = new ImageView(lane.isGreen() ? getGreenLight() : getRedLight());
         img.setRotate(getRotationAngle(lane.getDirection()));
         img.setTranslateX(getLightCoordinateX(lane.getId()));
         img.setTranslateY(getLightCoordinateY(lane.getId()));
@@ -44,6 +46,10 @@ public class DisplayService {
     }
 
     private double getRotationAngle(DirectionEnum direction) {
-        return Math.PI * direction.getId();
+        return -90 * direction.getId();
+    }
+
+    private void initCossroad() {
+        crossroad.getChildren().add(getCrossroad());
     }
 }

@@ -6,23 +6,23 @@ import javafx.scene.image.ImageView;
 public class Images {
 
     private static ImageView CROSSROAD = new ImageView(new Image("resources/crossroad.png"));
-    private static ImageView RED_LIGHT = new ImageView(new Image("resources/red_light.png"));
-    private static ImageView GREEN_LIGHT = new ImageView(new Image("resources/green_light.png"));
-    private static ImageView VEHICLE = new ImageView(new Image("resources/vehicle.png"));
+    private static Image RED_LIGHT = new Image("resources/red_light.png");
+    private static Image GREEN_LIGHT = new Image("resources/green_light.png");
+    private static Image VEHICLE = new Image("resources/vehicle.png");
 
     public static ImageView getCrossroad() {
         return CROSSROAD;
     }
 
-    public static ImageView getRedLight() {
+    public static Image getRedLight() {
         return RED_LIGHT;
     }
 
-    public static ImageView getGreenLight() {
+    public static Image getGreenLight() {
         return GREEN_LIGHT;
     }
 
-    public static ImageView getVehicle() {
+    public static Image getVehicle() {
         return VEHICLE;
     }
 

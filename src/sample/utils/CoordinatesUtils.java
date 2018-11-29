@@ -15,7 +15,7 @@ public class CoordinatesUtils {
             directionK = -1;
         else directionK = 0;
 
-        return getX(lane.getId()) + directionK * indexInQueue * getInterval();
+        return getX(lane.getId()) + directionK * (indexInQueue * getInterval() + getBeforeLightInterval());
     }
 
     public static double getVehicleCoordinateY(Lane lane, int indexInQueue) {
