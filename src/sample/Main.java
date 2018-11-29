@@ -10,8 +10,6 @@ import sample.enums.DirectionEnum;
 import sample.service.DisplayService;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import static sample.consts.Images.getBGHeight;
@@ -25,7 +23,6 @@ public class Main extends Application {
         Pane pane = new StackPane();
         DisplayService service = new DisplayService(pane);
         service.display(getTestData());
-        service.display(getTestData2());
         Scene scene = new Scene(pane, getBGWifth(), getBGHeight());
         primaryStage.setTitle("MY LOVELY CROSSROAD");
         primaryStage.setResizable(false);
