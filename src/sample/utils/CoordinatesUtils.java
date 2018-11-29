@@ -15,7 +15,7 @@ public class CoordinatesUtils {
     }
 
     public static Point getVehicleCoordinate(Long laneId, Long indexInQueue) {
-        return
+        return null;
     }
 
 }
